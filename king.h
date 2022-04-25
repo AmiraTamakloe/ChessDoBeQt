@@ -13,9 +13,9 @@ public:
     King(Color color, Position coordo);
     virtual ~King();
     static inline int getCounter();
-
-private:
     const virtual std::string getPiece() override;
+    
+private:
     bool acceptedMovement(Position coordo) override; 
     static int counter_;
 };

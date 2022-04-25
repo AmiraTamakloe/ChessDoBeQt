@@ -20,13 +20,14 @@ void Square::setPieceSquare(PieceAbs* piece)
 {
     this->piece_ = piece;
     isOccupied_ = true;
+    piece->setPosition(this->getPosition());
 };
 PieceAbs* Square::getPieceSquare()
 {
     return piece_;
 };
 
-void Square::unoccupiedSquare() 
+void Square::setUnoccupiedSquare() 
 {
     this->piece_ = nullptr;
     isOccupied_ = false;

@@ -8,10 +8,10 @@
 
 namespace piece {
 
- class PieceAbs {
+class PieceAbs {
  
 public :
-
+    PieceAbs()= default;
     PieceAbs(Color color, Position position);
     virtual ~PieceAbs();
     Color getPieceColor();
@@ -19,6 +19,7 @@ public :
     void setPosition(Position coordo);
     const virtual std::string getPiece() = 0 ;
     bool isMovementAccepted(Position coordo);
+    bool isDead_ = false;
 
 private :
     virtual bool acceptedMovement(Position coordo) =0;

@@ -13,11 +13,11 @@ public :
     Position getPosition() const;
     void setPieceSquare(PieceAbs* piece);
     piece::PieceAbs* getPieceSquare();
-    void unoccupiedSquare();
+    void setUnoccupiedSquare();
     Color getColor() ;
+    PieceAbs* piece_;
 
 private :
-    PieceAbs* piece_;
     Position position_;
     bool isOccupied_ = false;
     Color color_;
