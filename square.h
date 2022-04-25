@@ -1,24 +1,24 @@
- #pragma once
-#include "position.h"
+#pragma once
+#include "piece.h"
 #include "color.h"
-#include <qpushbutton.h>
+#include "position.h"
 
+using namespace piece;
 
-class Square : public QPushButton
-{
-Q_OBJECT
-public:
+class Square {
+public :
+    Square(Color color, Position coordo);
+    Square() {};
+    virtual ~Square();
+    Position getPosition() const;
+    void setPieceSquare(PieceAbs* piece);
+    piece::PieceAbs* getPieceSquare();
+    void unoccupiedSquare();
+    Color getColor() ;
 
-	Square(Position pos, QWidget* parent);
-	Square();
-	virtual ~Square();
-
-	Position getPosition();
-	bool isSquareOccupied();
-
-
-private:
-	Position position_;
-	bool occupied_;
-	Color squareColor;
+private :
+    PieceAbs* piece_;
+    Position position_;
+    bool isOccupied_ = false;
+    Color color_;
 };

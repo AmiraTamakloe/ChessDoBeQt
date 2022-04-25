@@ -1,26 +1,33 @@
-#include <iostream>
 #include "square.h"
 
-using namespace std;
 
-
-Square::Square(Position pos, QWidget* parent) : QPushButton(parent)
-{
-	this->position_ = pos;
+Square::~Square(){
 }
 
-Square::~Square() {}
+Square::Square(Color color, Position coordo)
 
-Position Square::getPosition()
 {
-	return position_;
+    color_ = color;
+    position_ = coordo;
 }
 
-bool Square::isSquareOccupied()
+Position Square::getPosition() const 
 {
-	if (occupied_)
-	{
-		return true;
-	}
-	return false;
+    return position_;
+}
+
+void Square::setPieceSquare(PieceAbs* piece) 
+{
+    this->piece_ = piece;
+    isOccupied_ = true;
+};
+PieceAbs* Square::getPieceSquare()
+{
+    return piece_;
+};
+
+void Square::unoccupiedSquare() 
+{
+    this->piece_ = nullptr;
+    isOccupied_ = false;
 }
