@@ -1,12 +1,13 @@
 ﻿#pragma once
 #pragma warning(push, 0) // Sinon Qt fait des avertissements à /W4.
 #include <QObject>
+#include <QPushButton>
 #pragma pop()
 #include <functional>
 
 using namespace std; // Dans ce cours on accepte le using namespace std dans le .hpp .
 
-class ChessBoardSet : public QObject {
+class ChessBoardSet : public QPushButton {
 	Q_OBJECT
 public:
 	ChessBoardSet() = default;
@@ -22,7 +23,7 @@ public slots:
 	void operationMoins();
 	void operationEgal();
 	void effectuerOperation();
-
+	
 signals:
 	void valeurChangee(int valeur);
 
