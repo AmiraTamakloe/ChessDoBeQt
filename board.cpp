@@ -32,10 +32,6 @@ Board::Board() {
 			}
 			
 		}
-        Position posKing;
-        posKing.x = 4;
-        posKing.y = 6;
-        board[1][2]->setPieceSquare( new King(Color::Black, posKing));
 }
 
 std::unique_ptr<Square>* Board::getSquare(Position pos) {
